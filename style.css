@@ -1,0 +1,73 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.heart {
+  width: 100px;
+  height: 90px;
+  position: relative;
+  margin: 20px auto;
+  /* The animation duration will be updated by JavaScript based on BPM.
+     For default BPM = 60, one beat per second (60/60 = 1s) */
+  animation: beat 1s infinite;
+  transform-origin: center;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+}
+
+.heart:before {
+  left: 0;
+  transform: rotate(-45deg);
+  transform-origin: 50px 80px;
+}
+
+.heart:after {
+  right: 0;
+  transform: rotate(45deg);
+  transform-origin: 0 80px;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.controls label {
+  font-size: 1.2rem;
+}
+
+.controls input {
+  font-size: 1.2rem;
+  padding: 5px;
+  width: 70px;
+  text-align: center;
+}
